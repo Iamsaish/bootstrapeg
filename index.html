@@ -13,7 +13,8 @@
      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
      <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
      <link rel="stylesheet" href="css/style.css">
-
+     <link rel="stylesheet" href="css/styles.css">
+ 
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                         <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul> 
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginmodal">
+                    <a id="lgnmodal" data-target="#loginmodal">
                         <span class="fa fa-sign-in"></span>
                         Login
                     </a>
@@ -138,7 +139,7 @@
                     <img src="img/logo.png" class="img-fluid" />
                 </div>
                 <div class="col-12 col-sm-3 justify-content-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reservemodal">Reserve</a>
+                    <a role="button" id="reserveModal" class="btn btn-block nav-link btn-warning">Reserve</a>
                 </div>
             </div>
         </div>
@@ -297,6 +298,12 @@
     
     <script>
        $(document).ready(function(){
+        $("#lgnmodal").click(function(){
+               $("#loginmodal").modal()
+           });
+           $("#reserveModal").click(function(){
+               $("#reservemodal").modal()
+           });
             $("#mycarousel").carousel( { interval: 2000 } );
             $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
